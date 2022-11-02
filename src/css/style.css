@@ -1,0 +1,28 @@
+html, body {
+    margin: 0;
+    background-color: green;
+}
+
+.road {
+    margin: 10% 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 2% 1fr 1fr 2%;
+    grid-template-columns: repeat(20, 1fr);
+    background-color: gray;
+    width: 100vw;
+    height: 20rem;
+    position: relative;
+}
+
+.edge_line {
+    background-color: white;
+    grid-column: 1 / -1;
+}
+
+.lane__top {
+    border-width: 0 0 .5rem 0;
+    border-color: white;
+    border-style: dashed;
+    grid-column: 1 / -1;
+}
