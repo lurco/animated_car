@@ -1,9 +1,9 @@
 @keyframes drive {
-    0% {left: -12%; transform: translateY(100%)}
-    30% {left: 112%; transform: translateY(100%)}
-    50% {left: 112%; transform: translateY(0%)}
-    80% {left: -12%; transform: translateY(0%)}
-    100% {left: -12%; transform: translateY(100%)}
+    0% {left: -20rem; transform: translateY(100%)}
+    30% {left: 140rem; transform: translateY(100%)}
+    50% {left: 140rem; transform: translateY(0%) scale(-1,1)}
+    80% {left: -20rem; transform: translateY(0%) scale(-1,1)}
+    100% {left: -20rem; transform: translateY(100%)}
 }
 
 html, body {
@@ -12,6 +12,7 @@ html, body {
 }
 
 .road {
+    overflow: hidden;
     margin: 10% 0 0;
     padding: 0;
     display: grid;
@@ -23,12 +24,12 @@ html, body {
     position: relative;
 }
 
-.edge__line {
+.road .edge__line {
     background-color: white;
     grid-column: 1 / -1;
 }
 
-.lane__top {
+.road .lane__top {
     border-width: 0 0 .5rem 0;
     border-color: white;
     border-style: dashed;
@@ -42,24 +43,24 @@ html, body {
     height: 9rem;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    /*animation-name: drive;*/
+    animation-name: drive;
     animation-duration: 5s;
     animation-iteration-count: infinite;
-    /*right: -5%;*/
 }
 
-.windows {
+.car .windows {
     background-color: royalblue;
     border-color: firebrick;
     border-style: solid;
     border-width: 2px;
     border-top-left-radius: 40%;
-    border-top-right-radius: 40%;
+    border-top-right-radius: 80%;
     grid-row: 1 / 2;
     grid-column: 2 / 4;
 }
 
-.body {
+.car .body {
+    position: relative;
     background-color: firebrick;
     border-color: firebrick;
     border-style: solid;
@@ -70,18 +71,43 @@ html, body {
     grid-column: 1 / -1;
 }
 
-.wheels {
+.car .body .lights {
+    position: absolute;
+    right: 0;
+    top: 12%;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: yellow;
+    height: 40%;
+    width: 10%;
+}
+
+.car .body .light_cones {
+    position: absolute;
+    right: -90%;
+    top: -150%;
+    opacity: 0.2;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100px 150px 100px;
+    border-color: transparent transparent yellow transparent;
+    transform: rotate(270deg);
+}
+
+.car .wheels {
     grid-row: 3 / -1;
     grid-column: 1 / -1;
     position: relative;
 }
-.wheels .wheel__left {
+.car .wheels .wheel__left {
     background-color: black;
     border-radius: 50%;
     position: absolute;
 }
 
-.wheels .wheel__right {
+.car .wheels .wheel__right {
     display: inline-block;
     width: 25%;
     height: 100%;
@@ -92,7 +118,7 @@ html, body {
     top: -50%;
 }
 
-.wheels .wheel__left {
+.car .wheels .wheel__left {
     display: inline-block;
     width: 25%;
     height: 100%;
