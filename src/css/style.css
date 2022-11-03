@@ -1,3 +1,11 @@
+@keyframes drive {
+    0% {left: -12%; transform: translateY(100%)}
+    30% {left: 112%; transform: translateY(100%)}
+    50% {left: 112%; transform: translateY(0%)}
+    80% {left: -12%; transform: translateY(0%)}
+    100% {left: -12%; transform: translateY(100%)}
+}
+
 html, body {
     margin: 0;
     background-color: green;
@@ -34,10 +42,17 @@ html, body {
     height: 9rem;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    /*animation-name: drive;*/
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    /*right: -5%;*/
 }
 
 .windows {
     background-color: royalblue;
+    border-color: firebrick;
+    border-style: solid;
+    border-width: 2px;
     border-top-left-radius: 40%;
     border-top-right-radius: 40%;
     grid-row: 1 / 2;
@@ -46,8 +61,11 @@ html, body {
 
 .body {
     background-color: firebrick;
-    border-top-left-radius: 30%;
-    border-top-right-radius: 40%;
+    border-color: firebrick;
+    border-style: solid;
+    border-width: 4px;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 30%;
     grid-row: 2 / 3;
     grid-column: 1 / -1;
 }
