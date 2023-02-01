@@ -44,7 +44,7 @@ html, body {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     animation-name: drive;
-    animation-duration: 5s;
+    animation-duration: 20s;
     animation-iteration-count: infinite;
 }
 
